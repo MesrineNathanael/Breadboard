@@ -20,4 +20,5 @@ Will be added in the future 🔦
 - Better UI
 
 App UI ⬛ :
+
 ![alt text](https://i.imgur.com/Y8LkyNv.png)
