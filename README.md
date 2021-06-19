@@ -1,6 +1,6 @@
-# Breadboard
+# Breadboard 🍞
 
-Bread board is a simple C# sound board. 🍞
+Bread board is a simple C# sound board. 
 
 This is the first commit.
 
