@@ -2,7 +2,7 @@
 
 Bread board is a simple C# sound board. 
 
-This is the first commit.
+This is a pre-release.
 
 Made to be used with a virtual cable like voice meeter banana.
 
