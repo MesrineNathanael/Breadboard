@@ -19,5 +19,5 @@ Will be added in the future 🔦
 - Phone control panel
 - Better UI
 
-App UI ⬛
+App UI ⬛ :
 ![alt text](https://i.imgur.com/Y8LkyNv.png)
