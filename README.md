@@ -1,6 +1,6 @@
 # Breadboard 🍞
 
-Bread board is a simple C# sound board. 
+Bread board is a simple C# sound board with macro support. 
 
 This is a pre-release.
 
@@ -10,7 +10,6 @@ You do need to configure the output in Windows at the moment like so : ![alt tex
 
 Will be added soon 🕙
 
-- Macro
 - Settings panel
 - Sound rename
 
@@ -21,4 +20,4 @@ Will be added in the future 🔦
 
 App UI ⬛ :
 
-![alt text](https://i.imgur.com/Y8LkyNv.png)
+![alt text](https://i.imgur.com/i2HpOnc.png)
