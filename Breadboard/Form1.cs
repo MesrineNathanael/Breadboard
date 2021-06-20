@@ -15,13 +15,18 @@ using System.Xml.Linq;
 using System.IO;
 using System.Security.Permissions;
 using System.Threading;
+using System.Windows.Input;
 
 namespace Breadboard
 {
     public partial class Form1 : Form
     {
         List<Bread> bread = new List<Bread>();
+        Debug debug = new Debug(true);
         WindowsMediaPlayer wplayer = new WindowsMediaPlayer();
+        bool macroChanging = false;
+        Bread selectedBread;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,9 +42,9 @@ namespace Breadboard
                     Bread yabur = new Bread("yabure", "D:\\Téléchargement\\renge-yabure-kabure-original.mp3");
                     bread.Add(mimi);
                     bread.Add(yabur);*/
-                    Bread test = new Bread("congratulations", "congratulations.mp3");
+                    Bread test = new Bread("congratulations", "congratulations.mp3", Key.LeftShift, Key.Q);
                     bread.Add(test);
-                    MessageBox.Show("First bread init complete");
+                    debug.msgbox("First bread init complete");
                 }
             }catch(Exception a)
             {
@@ -48,23 +53,52 @@ namespace Breadboard
 
             init();
             saveXml();
+            macroInit();
         }
-
+        private void macroInit()
+        {
+            mac.Interval = 500;
+            mac.Start();
+        }
+        private void restart()
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
         private void init()
         {
+            macroChanging = false;
+            boxMacro.Visible = false;
             flowLayoutPanel1.Controls.Clear();
-            for (int i = 0; i < bread.Count; i++)
+            int i = 0;
+            foreach (Bread croissant in bread)
             {
                 Button btn = new Button();
+
+                ContextMenu cm = new ContextMenu();
+
+                cm.MenuItems.Add("Change macro");
+
                 btn.Name = "bread" + i;
-                btn.Text = bread[i].getName();
+                //btn.Text = bread[i].getName() + "     " + bread[i].getMacro().getKey1() + " + " + bread[i].getMacro().getKey2();
+                btn.Text = croissant.getName();
                 btn.Tag = i;
                 btn.Height = 100;
                 btn.Width = 100;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.White;
+                btn.ContextMenu = cm;
+                cm.MenuItems[0].Click += new EventHandler(ChangeMacro_Click);
                 btn.Click += new EventHandler(Bread_Click);
+
+                btn.Paint += new PaintEventHandler((sender, e) =>
+                {
+                    e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                    e.Graphics.DrawString(croissant.getMacro().getKey1() + " + " + croissant.getMacro().getKey2(), Font, Brushes.White, 3, 5);
+                });
+
                 flowLayoutPanel1.Controls.Add(btn);
+                i++;
             }
             Button btnAdd = new Button();
             btnAdd.Name = "breadAdd";
@@ -79,6 +113,13 @@ namespace Breadboard
 
             
         }
+
+        private void ChangeMacro_Click(object sender, EventArgs e)
+        {
+            macroChanging = true;
+            boxMacro.Visible = true;
+        }
+
         protected void Bread_Click(object sender, EventArgs e)
         {
             string name;
@@ -86,10 +127,20 @@ namespace Breadboard
             name = name.Substring(35, name.Length-35);
 
             Bread lostBread = bread.Find(x => x.getName() == name);
-            //MessageBox.Show("good bread " + lostBread.getName());
 
-            wplayer.URL = lostBread.getPath();
-            wplayer.controls.play();
+            if (macroChanging)
+            {
+                debug.println("macro Changing");
+                boxMacro.Visible = false;
+                selectedBread = lostBread;
+                debug.println(selectedBread.getName());
+                boxMacro.Visible = true;
+            }
+            else
+            {
+                wplayer.URL = lostBread.getPath();
+                wplayer.controls.play();
+            }
         }
         protected void BreadAdd_Click(object sender, EventArgs e)
         {
@@ -99,17 +150,18 @@ namespace Breadboard
             openFileDialog1.Title = "Choose your bread music file";
             this.openFileDialog1.Multiselect = true;
             openFileDialog1.ShowDialog();
-
             foreach (String file in openFileDialog1.FileNames)
             {
-                Bread melonPan = new Bread(file.Substring(file.Length-14, 10), file);
-                bread.Add(melonPan);
-                
+                if(file.Substring(file.Length - 14, 10) != "penFileDia")
+                {
+                    Bread melonPan = new Bread(file.Substring(file.Length - 14, 10), file, Key.LeftShift, Key.Q);
+                    bread.Add(melonPan);
+                }
+
             }
             
             saveXml();
-            Application.Restart();
-            Environment.Exit(0);
+            restart();
         }
         private void saveXml()
         {
@@ -131,7 +183,8 @@ namespace Breadboard
                         
                         w.WriteElementString("name"+i, mmh.getName());
                         w.WriteElementString("path"+i, mmh.getPath());
-                        
+                        w.WriteElementString("key1-" + i, mmh.getMacro().getKey1().ToString());
+                        w.WriteElementString("key2-" + i, mmh.getMacro().getKey2().ToString());
                         i++;
                     }
                     w.WriteEndElement();
@@ -144,6 +197,7 @@ namespace Breadboard
             XmlDocument doc = new XmlDocument();
             doc.Load("saved.xml");
             bool ex = false;
+            Key ky1, ky2;
             for(int i = 0; i < 999; i++){
                 try
                 {
@@ -153,8 +207,15 @@ namespace Breadboard
                     XmlNode nodeP = doc.DocumentElement.SelectSingleNode("path" + i);
                     string path = nodeP.InnerText;
 
-                    Bread baguette = new Bread(name, path);
-                    //MessageBox.Show("baguette " + name);
+                    XmlNode nodeK1 = doc.DocumentElement.SelectSingleNode("key1-" + i);
+                    string key1 = nodeK1.InnerText;
+
+                    XmlNode nodeK2 = doc.DocumentElement.SelectSingleNode("key2-" + i);
+                    string key2 = nodeK2.InnerText;
+                    Enum.TryParse(key1, out ky1);
+                    Enum.TryParse(key2, out ky2);
+                    Bread baguette = new Bread(name, path, ky1, ky2);
+
                     bread.Add(baguette);
                 }
                 catch(Exception e)
@@ -174,6 +235,58 @@ namespace Breadboard
         private void label3_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void mac_Tick(object sender, EventArgs e)
+        {
+            foreach (Bread chocolatine in bread) {
+                if (Keyboard.IsKeyDown(chocolatine.getMacro().getKey1()) && Keyboard.IsKeyDown(chocolatine.getMacro().getKey2()))
+                {
+                    wplayer.URL = chocolatine.getPath();
+                    wplayer.controls.play();
+                }
+            }
+        }
+        private void btnSaveMacro_Click(object sender, EventArgs e)
+        {
+            Key kay1, kay2;
+            Enum.TryParse(comboKey1.Text, out kay1);
+            Enum.TryParse(comboKey2.Text, out kay2);
+            selectedBread.getMacro().setKey1(kay1);
+            selectedBread.getMacro().setKey2(kay2);
+            saveXml();
+            restart();
+        }
+
+        private void comboKey2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboKey1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            macroChanging = true;
+            boxMacro.Visible = true;
+        }
+
+        private void btnCloseMacro_Click(object sender, EventArgs e)
+        {
+            macroChanging = false;
+            boxMacro.Visible = false;
+        }
+
+        private void boxMacro_VisibleChanged(object sender, EventArgs e)
+        {
+            if(selectedBread != null)
+            {
+                debug.println("slBread != null == " + selectedBread.getName());
+                labelMacro.Text = selectedBread.getName();
+            }
         }
     }
 }
