@@ -10,7 +10,9 @@ You do need to configure the output in Windows at the moment like so : ![alt tex
 
 Will be added soon 🕙
 
+- More macro keys
 - Settings panel
+- Sound delete
 - Sound rename
 
 Will be added in the future 🔦
