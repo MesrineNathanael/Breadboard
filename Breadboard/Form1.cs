@@ -57,7 +57,7 @@ namespace Breadboard
         }
         private void macroInit()
         {
-            mac.Interval = 500;
+            mac.Interval = 250;
             mac.Start();
         }
         private void restart()
@@ -118,6 +118,9 @@ namespace Breadboard
         {
             macroChanging = true;
             boxMacro.Visible = true;
+            comboKey1.Enabled = false;
+            comboKey2.Enabled = false;
+            btnSaveMacro.Enabled = false;
         }
 
         protected void Bread_Click(object sender, EventArgs e)
@@ -272,6 +275,9 @@ namespace Breadboard
         {
             macroChanging = true;
             boxMacro.Visible = true;
+            comboKey1.Enabled = false;
+            comboKey2.Enabled = false;
+            btnSaveMacro.Enabled = false;
         }
 
         private void btnCloseMacro_Click(object sender, EventArgs e)
@@ -284,6 +290,9 @@ namespace Breadboard
         {
             if(selectedBread != null)
             {
+                comboKey1.Enabled = true;
+                comboKey2.Enabled = true;
+                btnSaveMacro.Enabled = true;
                 debug.println("slBread != null == " + selectedBread.getName());
                 labelMacro.Text = selectedBread.getName();
             }

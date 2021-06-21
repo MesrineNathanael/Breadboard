@@ -43,15 +43,15 @@ namespace Breadboard
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mac = new System.Windows.Forms.Timer(this.components);
             this.boxMacro = new System.Windows.Forms.GroupBox();
-            this.btnSaveMacro = new System.Windows.Forms.Button();
-            this.comboKey1 = new System.Windows.Forms.ComboBox();
-            this.comboKey2 = new System.Windows.Forms.ComboBox();
+            this.labelMacro = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCloseMacro = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboKey2 = new System.Windows.Forms.ComboBox();
+            this.comboKey1 = new System.Windows.Forms.ComboBox();
+            this.btnSaveMacro = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnCloseMacro = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.labelMacro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -186,43 +186,35 @@ namespace Breadboard
             this.boxMacro.Text = "Change macro";
             this.boxMacro.VisibleChanged += new System.EventHandler(this.boxMacro_VisibleChanged);
             // 
-            // btnSaveMacro
+            // labelMacro
             // 
-            this.btnSaveMacro.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveMacro.Location = new System.Drawing.Point(28, 219);
-            this.btnSaveMacro.Name = "btnSaveMacro";
-            this.btnSaveMacro.Size = new System.Drawing.Size(106, 23);
-            this.btnSaveMacro.TabIndex = 0;
-            this.btnSaveMacro.Text = "Save";
-            this.btnSaveMacro.UseVisualStyleBackColor = true;
-            this.btnSaveMacro.Click += new System.EventHandler(this.btnSaveMacro_Click);
+            this.labelMacro.AutoSize = true;
+            this.labelMacro.Location = new System.Drawing.Point(57, 89);
+            this.labelMacro.Name = "labelMacro";
+            this.labelMacro.Size = new System.Drawing.Size(44, 13);
+            this.labelMacro.TabIndex = 6;
+            this.labelMacro.Text = "Nothing";
+            this.labelMacro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboKey1
+            // label6
             // 
-            this.comboKey1.FormattingEnabled = true;
-            this.comboKey1.Items.AddRange(new object[] {
-            "LeftShift"});
-            this.comboKey1.Location = new System.Drawing.Point(28, 129);
-            this.comboKey1.Name = "comboKey1";
-            this.comboKey1.Size = new System.Drawing.Size(106, 21);
-            this.comboKey1.TabIndex = 1;
-            this.comboKey1.SelectedIndexChanged += new System.EventHandler(this.comboKey1_SelectedIndexChanged);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Changing macro of : ";
             // 
-            // comboKey2
+            // btnCloseMacro
             // 
-            this.comboKey2.FormattingEnabled = true;
-            this.comboKey2.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D",
-            "E",
-            "F"});
-            this.comboKey2.Location = new System.Drawing.Point(28, 177);
-            this.comboKey2.Name = "comboKey2";
-            this.comboKey2.Size = new System.Drawing.Size(106, 21);
-            this.comboKey2.TabIndex = 2;
-            this.comboKey2.SelectedIndexChanged += new System.EventHandler(this.comboKey2_SelectedIndexChanged);
+            this.btnCloseMacro.ForeColor = System.Drawing.Color.Black;
+            this.btnCloseMacro.Location = new System.Drawing.Point(28, 248);
+            this.btnCloseMacro.Name = "btnCloseMacro";
+            this.btnCloseMacro.Size = new System.Drawing.Size(106, 23);
+            this.btnCloseMacro.TabIndex = 4;
+            this.btnCloseMacro.Text = "Close";
+            this.btnCloseMacro.UseVisualStyleBackColor = true;
+            this.btnCloseMacro.Click += new System.EventHandler(this.btnCloseMacro_Click);
             // 
             // label4
             // 
@@ -233,6 +225,80 @@ namespace Breadboard
             this.label4.TabIndex = 3;
             this.label4.Text = "Select the sound where you\r\nwant to change his macro\r\nby selecting him.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // comboKey2
+            // 
+            this.comboKey2.FormattingEnabled = true;
+            this.comboKey2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12"});
+            this.comboKey2.Location = new System.Drawing.Point(28, 177);
+            this.comboKey2.Name = "comboKey2";
+            this.comboKey2.Size = new System.Drawing.Size(106, 21);
+            this.comboKey2.TabIndex = 2;
+            this.comboKey2.SelectedIndexChanged += new System.EventHandler(this.comboKey2_SelectedIndexChanged);
+            // 
+            // comboKey1
+            // 
+            this.comboKey1.FormattingEnabled = true;
+            this.comboKey1.Items.AddRange(new object[] {
+            "LeftAlt",
+            "LeftCtrl",
+            "LeftShift",
+            "RightAlt",
+            "RightCtrl",
+            "RightShift"});
+            this.comboKey1.Location = new System.Drawing.Point(28, 129);
+            this.comboKey1.Name = "comboKey1";
+            this.comboKey1.Size = new System.Drawing.Size(106, 21);
+            this.comboKey1.TabIndex = 1;
+            this.comboKey1.SelectedIndexChanged += new System.EventHandler(this.comboKey1_SelectedIndexChanged);
+            // 
+            // btnSaveMacro
+            // 
+            this.btnSaveMacro.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveMacro.Location = new System.Drawing.Point(28, 219);
+            this.btnSaveMacro.Name = "btnSaveMacro";
+            this.btnSaveMacro.Size = new System.Drawing.Size(106, 23);
+            this.btnSaveMacro.TabIndex = 0;
+            this.btnSaveMacro.Text = "Save";
+            this.btnSaveMacro.UseVisualStyleBackColor = true;
+            this.btnSaveMacro.Click += new System.EventHandler(this.btnSaveMacro_Click);
             // 
             // label5
             // 
@@ -255,36 +321,6 @@ namespace Breadboard
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
-            // 
-            // btnCloseMacro
-            // 
-            this.btnCloseMacro.ForeColor = System.Drawing.Color.Black;
-            this.btnCloseMacro.Location = new System.Drawing.Point(28, 248);
-            this.btnCloseMacro.Name = "btnCloseMacro";
-            this.btnCloseMacro.Size = new System.Drawing.Size(106, 23);
-            this.btnCloseMacro.TabIndex = 4;
-            this.btnCloseMacro.Text = "Close";
-            this.btnCloseMacro.UseVisualStyleBackColor = true;
-            this.btnCloseMacro.Click += new System.EventHandler(this.btnCloseMacro_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Changing macro of : ";
-            // 
-            // labelMacro
-            // 
-            this.labelMacro.AutoSize = true;
-            this.labelMacro.Location = new System.Drawing.Point(57, 89);
-            this.labelMacro.Name = "labelMacro";
-            this.labelMacro.Size = new System.Drawing.Size(44, 13);
-            this.labelMacro.TabIndex = 6;
-            this.labelMacro.Text = "Nothing";
-            this.labelMacro.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form1
             // 
