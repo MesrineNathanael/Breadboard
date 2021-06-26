@@ -12,7 +12,6 @@ Will be added soon 🕙
 
 - Sound volume control
 - More macro keys
-- Settings panel
 - Sound delete
 - Sound rename
 
