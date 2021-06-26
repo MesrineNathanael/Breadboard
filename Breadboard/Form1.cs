@@ -42,7 +42,9 @@ namespace Breadboard
                     Bread yabur = new Bread("yabure", "D:\\Téléchargement\\renge-yabure-kabure-original.mp3");
                     bread.Add(mimi);
                     bread.Add(yabur);*/
+                    Bread pause = new Bread("pause", "", Key.RightCtrl, Key.P);
                     Bread test = new Bread("congratulations", "congratulations.mp3", Key.LeftShift, Key.Q);
+                    bread.Add(pause);
                     bread.Add(test);
                     debug.msgbox("First bread init complete");
                 }
@@ -68,37 +70,41 @@ namespace Breadboard
         private void init()
         {
             macroChanging = false;
+            boxSettings.Visible = false;
             boxMacro.Visible = false;
             flowLayoutPanel1.Controls.Clear();
             int i = 0;
             foreach (Bread croissant in bread)
             {
-                Button btn = new Button();
-
-                ContextMenu cm = new ContextMenu();
-
-                cm.MenuItems.Add("Change macro");
-
-                btn.Name = "bread" + i;
-                //btn.Text = bread[i].getName() + "     " + bread[i].getMacro().getKey1() + " + " + bread[i].getMacro().getKey2();
-                btn.Text = croissant.getName();
-                btn.Tag = i;
-                btn.Height = 100;
-                btn.Width = 100;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.ForeColor = Color.White;
-                btn.ContextMenu = cm;
-                cm.MenuItems[0].Click += new EventHandler(ChangeMacro_Click);
-                btn.Click += new EventHandler(Bread_Click);
-
-                btn.Paint += new PaintEventHandler((sender, e) =>
+                if(croissant.getName() != "pause")
                 {
-                    e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                    e.Graphics.DrawString(croissant.getMacro().getKey1() + " + " + croissant.getMacro().getKey2(), Font, Brushes.White, 3, 5);
-                });
+                    Button btn = new Button();
 
-                flowLayoutPanel1.Controls.Add(btn);
-                i++;
+                    ContextMenu cm = new ContextMenu();
+
+                    cm.MenuItems.Add("Change macro");
+
+                    btn.Name = "bread" + i;
+                    //btn.Text = bread[i].getName() + "     " + bread[i].getMacro().getKey1() + " + " + bread[i].getMacro().getKey2();
+                    btn.Text = croissant.getName();
+                    btn.Tag = i;
+                    btn.Height = 100;
+                    btn.Width = 100;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.ForeColor = Color.White;
+                    btn.ContextMenu = cm;
+                    cm.MenuItems[0].Click += new EventHandler(ChangeMacro_Click);
+                    btn.Click += new EventHandler(Bread_Click);
+
+                    btn.Paint += new PaintEventHandler((sender, e) =>
+                    {
+                        e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                        e.Graphics.DrawString(croissant.getMacro().getKey1() + " + " + croissant.getMacro().getKey2(), Font, Brushes.White, 3, 5);
+                    });
+
+                    flowLayoutPanel1.Controls.Add(btn);
+                    i++;
+                }
             }
             Button btnAdd = new Button();
             btnAdd.Name = "breadAdd";
@@ -111,7 +117,7 @@ namespace Breadboard
             btnAdd.Click += new EventHandler(BreadAdd_Click);
             flowLayoutPanel1.Controls.Add(btnAdd);
 
-            
+
         }
 
         private void ChangeMacro_Click(object sender, EventArgs e)
@@ -245,8 +251,16 @@ namespace Breadboard
             foreach (Bread chocolatine in bread) {
                 if (Keyboard.IsKeyDown(chocolatine.getMacro().getKey1()) && Keyboard.IsKeyDown(chocolatine.getMacro().getKey2()))
                 {
-                    wplayer.URL = chocolatine.getPath();
-                    wplayer.controls.play();
+                    if(chocolatine.getName() == "pause")
+                    {
+                        wplayer.controls.pause();
+                    }
+                    else
+                    {
+                        wplayer.URL = chocolatine.getPath();
+                        wplayer.controls.play();
+                    }
+
                 }
             }
         }
@@ -296,6 +310,34 @@ namespace Breadboard
                 debug.println("slBread != null == " + selectedBread.getName());
                 labelMacro.Text = selectedBread.getName();
             }
+        }
+
+        private void btnSaveSettings_Click(object sender, EventArgs e)
+        {
+            Key kay1, kay2;
+            Enum.TryParse(comboKeySettings1.Text, out kay1);
+            Enum.TryParse(comboKeySettings2.Text, out kay2);
+            bread[0].getMacro().setKey1(kay1);
+            bread[0].getMacro().setKey2(kay2);
+            saveXml();
+            restart();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            labPause1.Text = bread[0].getMacro().getKey1().ToString() + " +";
+            labPause2.Text = bread[0].getMacro().getKey2().ToString();
+            boxSettings.Visible = true;
+        }
+
+        private void btnCloseSettings_Click(object sender, EventArgs e)
+        {
+            boxSettings.Visible = false;
+        }
+
+        private void boxSettings_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

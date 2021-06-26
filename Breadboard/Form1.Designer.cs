@@ -52,6 +52,15 @@ namespace Breadboard
             this.btnSaveMacro = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.boxSettings = new System.Windows.Forms.GroupBox();
+            this.btnCloseSettings = new System.Windows.Forms.Button();
+            this.comboKeySettings1 = new System.Windows.Forms.ComboBox();
+            this.comboKeySettings2 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labPause1 = new System.Windows.Forms.Label();
+            this.labPause2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -59,6 +68,7 @@ namespace Breadboard
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.boxMacro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.boxSettings.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -96,6 +106,7 @@ namespace Breadboard
             this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Settings";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -113,7 +124,7 @@ namespace Breadboard
             // pictureBox5
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
             this.pictureBox5.Image = global::Breadboard.Properties.Resources._1621318;
             this.pictureBox5.Location = new System.Drawing.Point(753, 380);
             this.pictureBox5.Name = "pictureBox5";
@@ -322,12 +333,152 @@ namespace Breadboard
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
             // 
+            // boxSettings
+            // 
+            this.boxSettings.Controls.Add(this.labPause2);
+            this.boxSettings.Controls.Add(this.labPause1);
+            this.boxSettings.Controls.Add(this.label8);
+            this.boxSettings.Controls.Add(this.btnSaveSettings);
+            this.boxSettings.Controls.Add(this.label7);
+            this.boxSettings.Controls.Add(this.comboKeySettings2);
+            this.boxSettings.Controls.Add(this.comboKeySettings1);
+            this.boxSettings.Controls.Add(this.btnCloseSettings);
+            this.boxSettings.ForeColor = System.Drawing.Color.White;
+            this.boxSettings.Location = new System.Drawing.Point(12, 118);
+            this.boxSettings.Name = "boxSettings";
+            this.boxSettings.Size = new System.Drawing.Size(163, 279);
+            this.boxSettings.TabIndex = 10;
+            this.boxSettings.TabStop = false;
+            this.boxSettings.Text = "Settings";
+            this.boxSettings.Enter += new System.EventHandler(this.boxSettings_Enter);
+            // 
+            // btnCloseSettings
+            // 
+            this.btnCloseSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnCloseSettings.Location = new System.Drawing.Point(29, 243);
+            this.btnCloseSettings.Name = "btnCloseSettings";
+            this.btnCloseSettings.Size = new System.Drawing.Size(106, 23);
+            this.btnCloseSettings.TabIndex = 7;
+            this.btnCloseSettings.Text = "Close";
+            this.btnCloseSettings.UseVisualStyleBackColor = true;
+            this.btnCloseSettings.Click += new System.EventHandler(this.btnCloseSettings_Click);
+            // 
+            // comboKeySettings1
+            // 
+            this.comboKeySettings1.FormattingEnabled = true;
+            this.comboKeySettings1.Items.AddRange(new object[] {
+            "LeftAlt",
+            "LeftCtrl",
+            "LeftShift",
+            "RightAlt",
+            "RightCtrl",
+            "RightShift"});
+            this.comboKeySettings1.Location = new System.Drawing.Point(29, 48);
+            this.comboKeySettings1.Name = "comboKeySettings1";
+            this.comboKeySettings1.Size = new System.Drawing.Size(106, 21);
+            this.comboKeySettings1.TabIndex = 7;
+            // 
+            // comboKeySettings2
+            // 
+            this.comboKeySettings2.FormattingEnabled = true;
+            this.comboKeySettings2.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "F1",
+            "F2",
+            "F3",
+            "F4",
+            "F5",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "F12",
+            "1"});
+            this.comboKeySettings2.Location = new System.Drawing.Point(29, 75);
+            this.comboKeySettings2.Name = "comboKeySettings2";
+            this.comboKeySettings2.Size = new System.Drawing.Size(106, 21);
+            this.comboKeySettings2.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Pause macro keys :";
+            // 
+            // btnSaveSettings
+            // 
+            this.btnSaveSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveSettings.Location = new System.Drawing.Point(29, 214);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(106, 23);
+            this.btnSaveSettings.TabIndex = 7;
+            this.btnSaveSettings.Text = "Save";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "actual :";
+            // 
+            // labPause1
+            // 
+            this.labPause1.AutoSize = true;
+            this.labPause1.Location = new System.Drawing.Point(51, 32);
+            this.labPause1.Name = "labPause1";
+            this.labPause1.Size = new System.Drawing.Size(49, 13);
+            this.labPause1.TabIndex = 9;
+            this.labPause1.Text = "lablablab";
+            // 
+            // labPause2
+            // 
+            this.labPause2.AutoSize = true;
+            this.labPause2.Location = new System.Drawing.Point(105, 32);
+            this.labPause2.Name = "labPause2";
+            this.labPause2.Size = new System.Drawing.Size(49, 13);
+            this.labPause2.TabIndex = 10;
+            this.labPause2.Text = "lablablab";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
             this.ClientSize = new System.Drawing.Size(844, 450);
+            this.Controls.Add(this.boxSettings);
             this.Controls.Add(this.boxMacro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox5);
@@ -355,6 +506,8 @@ namespace Breadboard
             this.boxMacro.ResumeLayout(false);
             this.boxMacro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.boxSettings.ResumeLayout(false);
+            this.boxSettings.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,6 +536,15 @@ namespace Breadboard
         private System.Windows.Forms.Button btnCloseMacro;
         private System.Windows.Forms.Label labelMacro;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox boxSettings;
+        private System.Windows.Forms.Button btnSaveSettings;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboKeySettings2;
+        private System.Windows.Forms.ComboBox comboKeySettings1;
+        private System.Windows.Forms.Button btnCloseSettings;
+        private System.Windows.Forms.Label labPause2;
+        private System.Windows.Forms.Label labPause1;
+        private System.Windows.Forms.Label label8;
     }
 }
 
