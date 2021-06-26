@@ -266,6 +266,16 @@ namespace Breadboard
             "W",
             "X",
             "Y",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "D0",
             "F1",
             "F2",
             "F3",
@@ -407,6 +417,16 @@ namespace Breadboard
             "W",
             "X",
             "Y",
+            "D1",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "D0",
             "F1",
             "F2",
             "F3",
@@ -418,8 +438,7 @@ namespace Breadboard
             "F9",
             "F10",
             "F11",
-            "F12",
-            "1"});
+            "F12"});
             this.comboKeySettings2.Location = new System.Drawing.Point(29, 75);
             this.comboKeySettings2.Name = "comboKeySettings2";
             this.comboKeySettings2.Size = new System.Drawing.Size(106, 21);

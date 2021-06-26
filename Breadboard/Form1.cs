@@ -39,7 +39,7 @@ namespace Breadboard
                 if (readXml() == false)
                 {
                     /*Bread mimi = new Bread("miyeon", "D:\\Téléchargement\\MiyeonPIPOU.mp3");
-                    Bread yabur = new Bread("yabure", "D:\\Téléchargement\\renge-yabure-kabure-original.mp3");
+                    Bread yabur = new Bread("yabur", "D:\\Téléchargement\\renge-yabure-kabure-original.mp3");
                     bread.Add(mimi);
                     bread.Add(yabur);*/
                     Bread pause = new Bread("pause", "", Key.RightCtrl, Key.P);
@@ -59,7 +59,7 @@ namespace Breadboard
         }
         private void macroInit()
         {
-            mac.Interval = 250;
+            mac.Interval = 200;
             mac.Start();
         }
         private void restart()
