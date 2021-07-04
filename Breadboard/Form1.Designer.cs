@@ -53,14 +53,21 @@ namespace Breadboard
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.boxSettings = new System.Windows.Forms.GroupBox();
-            this.btnCloseSettings = new System.Windows.Forms.Button();
-            this.comboKeySettings1 = new System.Windows.Forms.ComboBox();
-            this.comboKeySettings2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnSaveSettings = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labPause1 = new System.Windows.Forms.Label();
             this.labPause2 = new System.Windows.Forms.Label();
+            this.labPause1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboKeySettings2 = new System.Windows.Forms.ComboBox();
+            this.comboKeySettings1 = new System.Windows.Forms.ComboBox();
+            this.btnCloseSettings = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.boxRename = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtBoxRename = new System.Windows.Forms.TextBox();
+            this.btnCloseRename = new System.Windows.Forms.Button();
+            this.btnSaveRename = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -69,6 +76,8 @@ namespace Breadboard
             this.boxMacro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.boxSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.boxRename.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -76,9 +85,9 @@ namespace Breadboard
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(181, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(557, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(663, 450);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(663, 603);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // openFileDialog1
@@ -114,7 +123,7 @@ namespace Breadboard
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(48, 408);
+            this.label3.Location = new System.Drawing.Point(48, 561);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 24);
             this.label3.TabIndex = 6;
@@ -126,7 +135,7 @@ namespace Breadboard
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(47)))), ((int)(((byte)(54)))));
             this.pictureBox5.Image = global::Breadboard.Properties.Resources._1621318;
-            this.pictureBox5.Location = new System.Drawing.Point(753, 380);
+            this.pictureBox5.Location = new System.Drawing.Point(1129, 533);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 64);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -148,7 +157,7 @@ namespace Breadboard
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.Image = global::Breadboard.Properties.Resources._6163208;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 403);
+            this.pictureBox3.Location = new System.Drawing.Point(10, 556);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(35, 35);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +198,7 @@ namespace Breadboard
             this.boxMacro.Controls.Add(this.comboKey1);
             this.boxMacro.Controls.Add(this.btnSaveMacro);
             this.boxMacro.ForeColor = System.Drawing.Color.White;
-            this.boxMacro.Location = new System.Drawing.Point(12, 118);
+            this.boxMacro.Location = new System.Drawing.Point(194, 12);
             this.boxMacro.Name = "boxMacro";
             this.boxMacro.Size = new System.Drawing.Size(163, 279);
             this.boxMacro.TabIndex = 0;
@@ -200,7 +209,7 @@ namespace Breadboard
             // labelMacro
             // 
             this.labelMacro.AutoSize = true;
-            this.labelMacro.Location = new System.Drawing.Point(57, 89);
+            this.labelMacro.Location = new System.Drawing.Point(59, 89);
             this.labelMacro.Name = "labelMacro";
             this.labelMacro.Size = new System.Drawing.Size(44, 13);
             this.labelMacro.TabIndex = 6;
@@ -210,7 +219,7 @@ namespace Breadboard
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 71);
+            this.label6.Location = new System.Drawing.Point(31, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 5;
@@ -219,7 +228,7 @@ namespace Breadboard
             // btnCloseMacro
             // 
             this.btnCloseMacro.ForeColor = System.Drawing.Color.Black;
-            this.btnCloseMacro.Location = new System.Drawing.Point(28, 248);
+            this.btnCloseMacro.Location = new System.Drawing.Point(30, 248);
             this.btnCloseMacro.Name = "btnCloseMacro";
             this.btnCloseMacro.Size = new System.Drawing.Size(106, 23);
             this.btnCloseMacro.TabIndex = 4;
@@ -288,7 +297,7 @@ namespace Breadboard
             "F10",
             "F11",
             "F12"});
-            this.comboKey2.Location = new System.Drawing.Point(28, 177);
+            this.comboKey2.Location = new System.Drawing.Point(30, 177);
             this.comboKey2.Name = "comboKey2";
             this.comboKey2.Size = new System.Drawing.Size(106, 21);
             this.comboKey2.TabIndex = 2;
@@ -304,7 +313,7 @@ namespace Breadboard
             "RightAlt",
             "RightCtrl",
             "RightShift"});
-            this.comboKey1.Location = new System.Drawing.Point(28, 129);
+            this.comboKey1.Location = new System.Drawing.Point(30, 129);
             this.comboKey1.Name = "comboKey1";
             this.comboKey1.Size = new System.Drawing.Size(106, 21);
             this.comboKey1.TabIndex = 1;
@@ -313,7 +322,7 @@ namespace Breadboard
             // btnSaveMacro
             // 
             this.btnSaveMacro.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveMacro.Location = new System.Drawing.Point(28, 219);
+            this.btnSaveMacro.Location = new System.Drawing.Point(30, 219);
             this.btnSaveMacro.Name = "btnSaveMacro";
             this.btnSaveMacro.Size = new System.Drawing.Size(106, 23);
             this.btnSaveMacro.TabIndex = 0;
@@ -354,7 +363,7 @@ namespace Breadboard
             this.boxSettings.Controls.Add(this.comboKeySettings1);
             this.boxSettings.Controls.Add(this.btnCloseSettings);
             this.boxSettings.ForeColor = System.Drawing.Color.White;
-            this.boxSettings.Location = new System.Drawing.Point(12, 118);
+            this.boxSettings.Location = new System.Drawing.Point(371, 12);
             this.boxSettings.Name = "boxSettings";
             this.boxSettings.Size = new System.Drawing.Size(163, 279);
             this.boxSettings.TabIndex = 10;
@@ -362,31 +371,52 @@ namespace Breadboard
             this.boxSettings.Text = "Settings";
             this.boxSettings.Enter += new System.EventHandler(this.boxSettings_Enter);
             // 
-            // btnCloseSettings
+            // labPause2
             // 
-            this.btnCloseSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnCloseSettings.Location = new System.Drawing.Point(29, 243);
-            this.btnCloseSettings.Name = "btnCloseSettings";
-            this.btnCloseSettings.Size = new System.Drawing.Size(106, 23);
-            this.btnCloseSettings.TabIndex = 7;
-            this.btnCloseSettings.Text = "Close";
-            this.btnCloseSettings.UseVisualStyleBackColor = true;
-            this.btnCloseSettings.Click += new System.EventHandler(this.btnCloseSettings_Click);
+            this.labPause2.AutoSize = true;
+            this.labPause2.Location = new System.Drawing.Point(105, 32);
+            this.labPause2.Name = "labPause2";
+            this.labPause2.Size = new System.Drawing.Size(49, 13);
+            this.labPause2.TabIndex = 10;
+            this.labPause2.Text = "lablablab";
             // 
-            // comboKeySettings1
+            // labPause1
             // 
-            this.comboKeySettings1.FormattingEnabled = true;
-            this.comboKeySettings1.Items.AddRange(new object[] {
-            "LeftAlt",
-            "LeftCtrl",
-            "LeftShift",
-            "RightAlt",
-            "RightCtrl",
-            "RightShift"});
-            this.comboKeySettings1.Location = new System.Drawing.Point(29, 48);
-            this.comboKeySettings1.Name = "comboKeySettings1";
-            this.comboKeySettings1.Size = new System.Drawing.Size(106, 21);
-            this.comboKeySettings1.TabIndex = 7;
+            this.labPause1.AutoSize = true;
+            this.labPause1.Location = new System.Drawing.Point(51, 32);
+            this.labPause1.Name = "labPause1";
+            this.labPause1.Size = new System.Drawing.Size(49, 13);
+            this.labPause1.TabIndex = 9;
+            this.labPause1.Text = "lablablab";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "actual :";
+            // 
+            // btnSaveSettings
+            // 
+            this.btnSaveSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveSettings.Location = new System.Drawing.Point(30, 219);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(106, 23);
+            this.btnSaveSettings.TabIndex = 7;
+            this.btnSaveSettings.Text = "Save";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Pause macro keys :";
             // 
             // comboKeySettings2
             // 
@@ -444,59 +474,115 @@ namespace Breadboard
             this.comboKeySettings2.Size = new System.Drawing.Size(106, 21);
             this.comboKeySettings2.TabIndex = 7;
             // 
-            // label7
+            // comboKeySettings1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Pause macro keys :";
+            this.comboKeySettings1.FormattingEnabled = true;
+            this.comboKeySettings1.Items.AddRange(new object[] {
+            "LeftAlt",
+            "LeftCtrl",
+            "LeftShift",
+            "RightAlt",
+            "RightCtrl",
+            "RightShift"});
+            this.comboKeySettings1.Location = new System.Drawing.Point(29, 48);
+            this.comboKeySettings1.Name = "comboKeySettings1";
+            this.comboKeySettings1.Size = new System.Drawing.Size(106, 21);
+            this.comboKeySettings1.TabIndex = 7;
             // 
-            // btnSaveSettings
+            // btnCloseSettings
             // 
-            this.btnSaveSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveSettings.Location = new System.Drawing.Point(29, 214);
-            this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(106, 23);
-            this.btnSaveSettings.TabIndex = 7;
-            this.btnSaveSettings.Text = "Save";
-            this.btnSaveSettings.UseVisualStyleBackColor = true;
-            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
+            this.btnCloseSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnCloseSettings.Location = new System.Drawing.Point(30, 248);
+            this.btnCloseSettings.Name = "btnCloseSettings";
+            this.btnCloseSettings.Size = new System.Drawing.Size(106, 23);
+            this.btnCloseSettings.TabIndex = 7;
+            this.btnCloseSettings.Text = "Close";
+            this.btnCloseSettings.UseVisualStyleBackColor = true;
+            this.btnCloseSettings.Click += new System.EventHandler(this.btnCloseSettings_Click);
             // 
-            // label8
+            // label9
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "actual :";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Meiryo UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(48, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 24);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Rename";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // labPause1
+            // pictureBox7
             // 
-            this.labPause1.AutoSize = true;
-            this.labPause1.Location = new System.Drawing.Point(51, 32);
-            this.labPause1.Name = "labPause1";
-            this.labPause1.Size = new System.Drawing.Size(49, 13);
-            this.labPause1.TabIndex = 9;
-            this.labPause1.Text = "lablablab";
+            this.pictureBox7.Image = global::Breadboard.Properties.Resources._6163187;
+            this.pictureBox7.Location = new System.Drawing.Point(10, 262);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 11;
+            this.pictureBox7.TabStop = false;
             // 
-            // labPause2
+            // boxRename
             // 
-            this.labPause2.AutoSize = true;
-            this.labPause2.Location = new System.Drawing.Point(105, 32);
-            this.labPause2.Name = "labPause2";
-            this.labPause2.Size = new System.Drawing.Size(49, 13);
-            this.labPause2.TabIndex = 10;
-            this.labPause2.Text = "lablablab";
+            this.boxRename.Controls.Add(this.btnCloseRename);
+            this.boxRename.Controls.Add(this.txtBoxRename);
+            this.boxRename.Controls.Add(this.btnSaveRename);
+            this.boxRename.Controls.Add(this.label10);
+            this.boxRename.ForeColor = System.Drawing.Color.White;
+            this.boxRename.Location = new System.Drawing.Point(194, 298);
+            this.boxRename.Name = "boxRename";
+            this.boxRename.Size = new System.Drawing.Size(163, 279);
+            this.boxRename.TabIndex = 13;
+            this.boxRename.TabStop = false;
+            this.boxRename.Text = "Rename";
+            this.boxRename.Enter += new System.EventHandler(this.boxRename_Enter);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(29, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 39);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Select the sound you\r\nwant to rename\r\nby selecting him.";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtBoxRename
+            // 
+            this.txtBoxRename.Location = new System.Drawing.Point(16, 78);
+            this.txtBoxRename.Name = "txtBoxRename";
+            this.txtBoxRename.Size = new System.Drawing.Size(136, 20);
+            this.txtBoxRename.TabIndex = 9;
+            // 
+            // btnCloseRename
+            // 
+            this.btnCloseRename.ForeColor = System.Drawing.Color.Black;
+            this.btnCloseRename.Location = new System.Drawing.Point(30, 250);
+            this.btnCloseRename.Name = "btnCloseRename";
+            this.btnCloseRename.Size = new System.Drawing.Size(106, 23);
+            this.btnCloseRename.TabIndex = 8;
+            this.btnCloseRename.Text = "Close";
+            this.btnCloseRename.UseVisualStyleBackColor = true;
+            this.btnCloseRename.Click += new System.EventHandler(this.btnCloseRename_Click);
+            // 
+            // btnSaveRename
+            // 
+            this.btnSaveRename.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveRename.Location = new System.Drawing.Point(30, 221);
+            this.btnSaveRename.Name = "btnSaveRename";
+            this.btnSaveRename.Size = new System.Drawing.Size(106, 23);
+            this.btnSaveRename.TabIndex = 7;
+            this.btnSaveRename.Text = "Save";
+            this.btnSaveRename.UseVisualStyleBackColor = true;
+            this.btnSaveRename.Click += new System.EventHandler(this.btnSaveRename_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(844, 450);
+            this.ClientSize = new System.Drawing.Size(1220, 603);
+            this.Controls.Add(this.boxRename);
             this.Controls.Add(this.boxSettings);
             this.Controls.Add(this.boxMacro);
             this.Controls.Add(this.label5);
@@ -510,6 +596,8 @@ namespace Breadboard
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.pictureBox7);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -527,6 +615,9 @@ namespace Breadboard
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.boxSettings.ResumeLayout(false);
             this.boxSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.boxRename.ResumeLayout(false);
+            this.boxRename.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,6 +655,13 @@ namespace Breadboard
         private System.Windows.Forms.Label labPause2;
         private System.Windows.Forms.Label labPause1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.GroupBox boxRename;
+        private System.Windows.Forms.Button btnCloseRename;
+        private System.Windows.Forms.TextBox txtBoxRename;
+        private System.Windows.Forms.Button btnSaveRename;
+        private System.Windows.Forms.Label label10;
     }
 }
 

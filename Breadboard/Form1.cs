@@ -69,9 +69,16 @@ namespace Breadboard
         }
         private void init()
         {
+            this.Size = new Size(860, 489);
+            boxSettings.Location = new Point(12, 118);
+            boxMacro.Location = new Point(12, 118);
+            boxRename.Location = new Point(12, 118);
+
             macroChanging = false;
             boxSettings.Visible = false;
             boxMacro.Visible = false;
+            boxRename.Visible = false;
+
             flowLayoutPanel1.Controls.Clear();
             int i = 0;
             foreach (Bread croissant in bread)
@@ -306,9 +313,12 @@ namespace Breadboard
             {
                 comboKey1.Enabled = true;
                 comboKey2.Enabled = true;
+                txtBoxRename.Enabled = true;
+                btnSaveRename.Enabled = true;
                 btnSaveMacro.Enabled = true;
                 debug.println("slBread != null == " + selectedBread.getName());
                 labelMacro.Text = selectedBread.getName();
+                txtBoxRename.Text = selectedBread.getName();
             }
         }
 
@@ -338,6 +348,33 @@ namespace Breadboard
         private void boxSettings_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            macroChanging = true;
+            boxRename.Visible = true;
+            txtBoxRename.Enabled = false;
+            btnSaveRename.Enabled = false;
+        }
+
+        private void btnCloseRename_Click(object sender, EventArgs e)
+        {
+            macroChanging = false;
+            boxRename.Visible = false;
+            txtBoxRename.Text = "";
+        }
+
+        private void boxRename_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveRename_Click(object sender, EventArgs e)
+        {
+            selectedBread.setName(txtBoxRename.Text);
+            saveXml();
+            restart();
         }
     }
 }

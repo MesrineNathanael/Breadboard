@@ -31,5 +31,9 @@ namespace Breadboard
         {
             return this.macro;
         }
+        public void setName(string name)
+        {
+            this.name = name;
+        }
     }
 }
