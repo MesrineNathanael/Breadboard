@@ -13,7 +13,6 @@ Will be added soon 🕙
 - Sound volume control
 - More macro keys
 - Sound delete
-- Sound rename
 
 Will be added in the future 🔦
 
